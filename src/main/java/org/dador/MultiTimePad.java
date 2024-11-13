@@ -2,6 +2,8 @@ package org.dador;
 
 /**
  *
+ * Alioune BALDE
+ * Mame Diarra Seydi
  */
 public class MultiTimePad {
 
@@ -20,7 +22,7 @@ public class MultiTimePad {
         String msg4 = "cd38a9d1df8fe694f8c7d14197febf3c48e9c488e3675464d938a7346ae940";
         String msg5 = "d370b8d79692e5dbf9c3d018c0e8f73e58e0d488f167186cd96ff3346af751";
         String msg6 = "ce38a5ccdf95fddbfddec70492bbeb394ce290dcff690020d976b67c6ae951";
-        String[] messages = new String[]{msg0, msg1, msg2, msg3, msg4, msg5, msg6};
+        String[] messages = new String[] { msg0, msg1, msg2, msg3, msg4, msg5, msg6 };
         int nbMsg = messages.length;
         byte[][] byteArrayMsg = new byte[nbMsg][];
 
@@ -28,13 +30,13 @@ public class MultiTimePad {
         byte[] tmpByteMsg;
         int i;
 
-
         String displayIndex = HexConverters.toPrintableHexFromByteArray(HexConverters.toByteArrayFromHex(index));
         System.out.println("Original Cryptograms :");
         System.out.print("i: ");
         System.out.println(displayIndex);
 
-        // Transforme les messages sous un format "tableau d'octets" pour pouvoir les manipuler
+        // Transforme les messages sous un format "tableau d'octets" pour pouvoir les
+        // manipuler
         for (i = 0; i < nbMsg; i++) {
             tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
             byteArrayMsg[i] = tmpByteMsg;
@@ -47,9 +49,8 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // TODO: renseigner les valeurs de la clé..
-        key[0] = 0 ;
+        key[0] = 0;
         key[1] = 0x50;
-
 
         System.out.println("Key :");
         System.out.println(displayIndex);
@@ -66,7 +67,7 @@ public class MultiTimePad {
             tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
             i++;
         }
 
